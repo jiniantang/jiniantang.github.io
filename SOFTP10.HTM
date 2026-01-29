@@ -1,0 +1,99 @@
+﻿<HTML>
+<head>
+    
+<!--
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=BIG5">
+-->
+<TITLE>人工智慧未來體驗區
+</TITLE>
+<style>
+        body { background: #ece9d8; color: #000; font-family: "Tahoma", sans-serif; padding: 50px; }
+        #chat-box { background: white; border: 2px inset #fff; padding: 20px; height: 150px; overflow-y: auto; margin-bottom: 20px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+        .clippy-container { position: fixed; bottom: 20px; right: 20px; text-align: center; width: 250px; }
+        .bubble { background: #ffffcc; border: 1px solid #000; border-radius: 10px; padding: 15px; margin-bottom: 10px; position: relative; font-size: 14px; display: none; box-shadow: 3px 3px 0px rgba(0,0,0,0.1); }
+        .bubble::after { content: ''; position: absolute; bottom: -10px; right: 30px; border-width: 10px 10px 0; border-style: solid; border-color: #000 transparent; }
+        input { width: 70%; padding: 10px; border: 1px solid #7f9db9; }
+        button { padding: 10px 20px; cursor: pointer; background: #f0f0f0; border: 1px solid #7f9db9; }
+        img#clippy-gif { width: 100px; }
+    </style>
+</head>
+<BODY>
+<CENTER>
+    
+<TABLE Border=0 width="60%"><TR><TD>
+<MARQUEE DIRECTION="RIGHT" SCROLLAMOUNT="5">
+
+<FONT SIZE="5" COLOR="#FF00FF" FACE="新細明體"><B>這　是　我　的　第　一　個　烘　培　雞</B></FONT>
+    </MARQUEE>
+
+
+</TD>
+</TR>
+<TR><TD><FONT SIZE="6" COLOR="#6633FF" FACE="標楷體">人工智慧未來體驗區
+</FONT></TD></TR></TABLE>
+<BR><BR><BR><BR><BR>
+<FONT FACE="標楷體">
+    <p>技術支援：Powerd by JSAI</p>
+    
+    <div id="chat-box">請在下方輸入問題，啟動量子運算...</div>
+    
+    <input type="text" id="userInput" placeholder="歡迎輸入您的疑問！..."  style="font-family: '標楷體', sans-serif; font-size: 16px;">
+    <button onclick="askAI()">提交</button>
+
+    <div class="clippy-container">
+        <div id="speech-bubble" class="bubble">看起來你遇到了麻煩！<br>需要我幫你把這段代碼換成 Java 嗎？</div>
+        <img src="data:image/png;base64,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" alt="Clippy">
+    </div>
+
+    <script>
+        const clippyQuotes = [
+            "看起來你正試圖顯得很專業！",
+            "需要我幫你把這封辭職信寫得更像人類寫的嗎？",
+            "偵測到邏輯漏洞！建議改用PTT報告來掩蓋。",
+            "這是一個好問題，但我現在只想跳舞。",
+            "您目前的瀏覽器不支援此項運算。"
+        ];
+
+        function askAI() {
+            const box = document.getElementById('chat-box');
+            const bubble = document.getElementById('speech-bubble');
+            const input = document.getElementById('userInput');
+            
+            if(!input.value) return;
+
+            // 模擬思考
+            box.innerHTML = "正在調用 100 萬個虛擬主機進行運算...";
+            bubble.style.display = "none";
+
+            setTimeout(() => {
+                const res = clippyQuotes[Math.floor(Math.random() * clippyQuotes.length)];
+                box.innerHTML = `<strong>結果：</strong> 無法解決問題，但這並不影響我們的股價。`;
+                bubble.innerHTML = res;
+                bubble.style.display = "block";
+                input.value = "";
+            }, 1500);
+        }
+    </script>
+</FONT>
+<HR>
+<TABLE Border=0>
+<TR>
+<TD>    <A HREF="https://www.microsoft.com/edge" TITLE="最佳瀏覽器下載"  target="_blank">
+        <IMG width="32" height="32" SRC="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAIAAABKoV4MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADfSURBVFhH7ZW7DYMwEEC9D4t4gczgNWiyCVW2CC0tonZNT33B3/iH5TiK7Ej39Erws3QnINAUzDcE8+UM03FK6DMjzJuwjL7zDymhmzGMXTkyLcAhTdNr3g/rQwcpcK51uM1a+7BynZZT/VAE5pMkl7xkq8l9F5pX8hvQWX41EsaFzhGZU1yCEXjziugsrzYuXrpqMY/5svz3m/8RmE/ifjvV/DIjrKbX/MiFhC5ScQl7D32Ji3t4s2M8/5fqNa8I/h8VYr46r1DjfE80ariW7IflH/K/A/MNwXxDmuYBXvb2SYi5VkySAAAAAElFTkSuQmCC" BORDER="0" ALT="按　我　下　載　ＩＥ　６．０">
+    </A></TD>
+<TD>    <FONT SIZE="1" COLOR="#666666" FACE="新細明體">
+        ＜　點　擊　下　載　，　體　驗　ｅ　指　搞　定　的　快　感　＞
+    </FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<CENTER>
+    <FONT SIZE="2" FACE="新細明體">
+        本　網　頁　使　用　免　費　軟　體　ＤｉＤａ　網　頁　速　寫　器　編　輯　而　成　。
+        <BR><BR>
+        請　支　持　愛　用　正　版　軟　體　。
+        <BR><BR>建　議　使　用　Ｍｉｃｒｏｓｏｆｔ　ＩＥ　６．０　以　上　版　本　觀　看　，　並　設　定　８００Ｘ６００　解　析　度　，　以　獲　最　佳　瀏　覽　效　果　。
+    </FONT>
+</CENTER>
+</BODY>
+</HTML>

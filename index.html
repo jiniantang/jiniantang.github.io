@@ -1,4 +1,4 @@
-﻿<HTML>
+<HTML>
 <HEAD>
 <!--
 <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=BIG5">
@@ -21,6 +21,37 @@
 <p></p><FONT SIZE="5" FACE="新細明體"><B>本　站　建　置　中　，　請　稍　候　．　．　．</B></FONT><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
 
 
+
+
+    <script>
+// 監聽全域點擊事件
+document.addEventListener('click', function() {
+    // 隨機觸發機率 (例如 30%)，讓使用者防不勝防
+    if (Math.random() < 0.3) {
+        const warnings = [
+            "⚠️ 警告：偵測到 TAIWAN NO.1 巨集病毒！",
+            "病毒正在嘗試格式化您的 A: 槽磁碟片...",
+            "您的滑鼠已被病毒劫持，請立即向 Clippy 投降！",
+            "偵測到您正在使用非 IE 6.0 瀏覽器，這是違法行為。",
+            "病毒正在將您的背景改為「閃亮長輩圖」..."
+        ];
+        
+        // 隨機選一個好笑的警告
+        const randomMsg = warnings[Math.floor(Math.random() * warnings.length)];
+        
+        // 經典的 alert 彈窗
+        alert(randomMsg);
+        
+        // 彈完之後，可以再來一個確認視窗增加煩躁度
+        if (confirm("是否花費 100 點點數進行雲端殺毒？")) {
+            alert("點數不足！請前往最近的便利商店購買 GASH 感恩。");
+        }
+    }
+});
+    </script>
+
+
+<CENTER>
 <HR>
 <TABLE Border=0>
 <TR>
@@ -33,7 +64,6 @@
 </TR>
 </TABLE>
 <HR>
-<CENTER>
     <FONT SIZE="2" FACE="新細明體">
         本　網　頁　使　用　免　費　軟　體　ｄｉｄａ　網　頁　速　寫　器　編　輯　而　成　。
         <BR><BR>
